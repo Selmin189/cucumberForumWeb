@@ -1,15 +1,15 @@
-package uni.fmi.comm.model;
+package uni.fmi.topic.model;
 
-import uni.fmi.comm.model.CommService;
+import uni.fmi.topic.TopicService;
 
-public class CommScreenModel {
+public class TopicScreenModel {
 
 	private String content;
 	private String user;
 	private String message;
 
-	public void setContent(final String content) {
-		this.content=content;
+	public void setContent(final String title) {
+		this.content=title;
 	}
 	
 	public void setUser(final String user) {
@@ -21,7 +21,7 @@ public class CommScreenModel {
 	}
 
 	public void clickAddButton() {
-		message = CommService.comm(content,user);
+		message = TopicService.comm(content,user);
 		
 	}
 	

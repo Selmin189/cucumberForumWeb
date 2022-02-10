@@ -1,6 +1,9 @@
 package uni.fmi.models;
 import java.util.*;
 
+
+import uni.fmi.models.*;
+
 /**
  * 
  */
@@ -11,18 +14,35 @@ public class Comment {
      */
     public Comment() {
     }
-    public Comment(final String content ,String user) {
-    	this.content=content;
-    	this.user=user;
+    
+    public Comment(String title, User user) {
+       
+        this.title= title;
+        this.user = user;
+       
     }
     
+//    public Comment(final String content ,String user) {
+//    	this.content=content;
+//    	this.user=user;
+//    }
+//    
     private String content;
+    private String title;
     private Date date;
     private Topic topic;
-    private String user;
+    private User user;
+    private Set<Comment> comments= new HashSet<>();
    
 
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     public String getContent() {
         // TODO implement here
         return content;
@@ -66,18 +86,21 @@ public class Comment {
         this.topic=topic;
      
     }
-    public String getUser() {
-        // TODO implement here
+    public User getUser() {
         return user;
     }
 
-    /**
-     * @param topic 
-     * @return
-     */
-    public void setUser(String user) {
-        this.user=user;
-     
+    public void setUser(User user) {
+        this.user = user;
     }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
 
 }

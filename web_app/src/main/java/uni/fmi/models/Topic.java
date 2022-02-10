@@ -7,12 +7,28 @@ import java.util.*;
 public class Topic {
 
     private String title; 
+    private String user;
     private String type;
     private String description;
     private User owner;
     private Set<Comment> comments;
     
     public Topic() {
+    }
+    
+    public Topic(String title, String user) {
+        
+        this.title= title;
+        this.user = user;
+       
+    }
+    
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
 

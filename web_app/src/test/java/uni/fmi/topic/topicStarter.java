@@ -1,4 +1,4 @@
-package uni.fmi.comm;
+package uni.fmi.topic;
 
 import org.junit.runner.RunWith;
 
@@ -7,6 +7,6 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, plugin = {"pretty","html:target/login-feature"})
-public class commStarter {
+public class topicStarter {
 
 }

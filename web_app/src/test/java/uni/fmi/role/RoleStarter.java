@@ -7,6 +7,6 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, plugin = {"pretty","html:target/login-feature"})
-public class DeleteStarter {
+public class RoleStarter {
 
 }

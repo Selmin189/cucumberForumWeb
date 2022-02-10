@@ -1,4 +1,4 @@
-package uni.fmi.comm;
+package uni.fmi.topic;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,17 +6,17 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import uni.fmi.comm.model.CommScreenModel;
+import uni.fmi.topic.model.TopicScreenModel;
 
 
-public class commSteps {
+public class topicSteps {
 	
-	private CommScreenModel commModel;
+	private TopicScreenModel commModel;
 	
 	
 	@Given("^отваря полето за коментари$")
 	public void openFieldForComment() throws Throwable {
-	  commModel= new CommScreenModel();
+	  commModel= new TopicScreenModel();
 	}
 	
 	@Given("^потребител e регистриран \"([^\"]*)\"$")
@@ -29,7 +29,7 @@ public class commSteps {
 	    commModel.setContent(comment);
 	}
 
-	@When("^натисне бутона за публиковане на коментар$")
+	@When("^натисне бутона за публиковане на тема$")
 	public void clickAddComment() throws Throwable {
 	 commModel.clickAddButton();
 	}
@@ -58,7 +58,7 @@ public class commSteps {
 	}
 	@Given("^напише обиден коментар \"([^\"]*)\"$")
 	public void напише_обиден_коментар(final String comment) throws Throwable {
-		   commModel.setContent("****");
+		   commModel.setContent("S");
 	}
 
 }

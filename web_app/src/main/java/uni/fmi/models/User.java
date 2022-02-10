@@ -1,24 +1,38 @@
 package uni.fmi.models;
 import java.util.*;
 
-import javax.management.relation.Role;
+
+
+import uni.fmi.models.*;
+
 
 /**
  * 
  */
 public class User {
+	   public User(String username,  String email) {
+	        this.username = username;
+	        this.email = email;
+	        this.roles.add(new Role("User"));
+	        }
+	
 		private String username;
 	    private String password;
 	    private String email;
-	    private Set<Role> roles;
+	    private Set<Role> roles = new HashSet<>();
+	    private Set<Comment> comments = new HashSet<>();
 	    private Set<Topic> topics;
 	    private Set<Registration> registration;
+	    
     
     public User() {
     }
 
 
-    public String getUsername() {
+ 
+
+
+	public String getUsername() {
         // TODO implement here
         return username;
     }
@@ -67,18 +81,15 @@ public class User {
     }
 
     public Set<Role> getRoles() {
-		return roles;
-        // TODO implement here
-       
+        return roles;
     }
 
-    /**
-     * @param roles 
-     * @return
-     */
     public void setRoles(Set<Role> roles) {
-       this.roles=roles;
-      
+        this.roles = roles;
+    }
+
+    public void addRole(Role role) {
+        this.roles.add(role);
     }
 
     /**
@@ -94,7 +105,16 @@ public class User {
        this.topics=topics;
   
     }
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
 
+    public Set<Comment> getComments() {
+        return comments;
+    }
+    public void createComment(Comment comment) {
+        this.comments.add(comment);
+    }
 
     public Set<Registration> Registration() {
         // TODO implement here

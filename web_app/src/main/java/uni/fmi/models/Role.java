@@ -11,9 +11,9 @@ public class Role {
     private String roleDescription;
     private Set<User> users;
     
-    public Role(final String roleTitle) {
-    	this.roleTitle=roleTitle;
-    }
+//    public Role(final String roleTitle) {
+//    	this.roleTitle=roleTitle;
+//    }
     
     public String getRoleTitle() {
         // TODO implement here
@@ -38,16 +38,18 @@ public class Role {
     }
     
 
+    public Role(String roleCode) {
+        this.roleCode = roleCode;
+    }
+
     public String getRoleCode() {
-        // TODO implement here
         return roleCode;
     }
 
-  
     public void setRoleCode(String roleCode) {
-      this.roleCode=roleCode;
-  
+        this.roleCode = roleCode;
     }
+
 
    
     public Set<User> getUsers() {
